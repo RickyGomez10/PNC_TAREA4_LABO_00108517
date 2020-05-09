@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action ="@{/seguridad}" th:object="${robot}" method="post">
+	<div class="contenedor4">
+	<label>Marcar solo si usted es un robot</label>
+	<input type="radio" th:field="*{soyRobot}" th:value="${false}"	>
+	<span th:errors = "*{soyRobot}"  style="color:  #E81505;"></span>
+	<div class="contenedor4-botones">
+	<input type="submit" value="Aceptar">
+	
+	<a href="producto">Regresar</a>
+	
+	</div>
+	</form>
+	</div>
+</body>
+</html>

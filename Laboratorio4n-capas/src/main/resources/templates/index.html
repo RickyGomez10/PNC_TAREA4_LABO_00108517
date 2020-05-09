@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" >
+<head>
+ <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<title>Venta de producto</title>
+</head>
+<body>
+
+<form th:action="@{/formProducto}" th:object ="${producto}" method = "post">
+	
+	<div class="contenedor1">
+	<div class="cab">
+	<h1>Ingresar producto - 00108517</h1>
+	</div>
+	
+	<div class="contenedor2">
+	<label for="nombre">Nombre del producto: </label>
+	<input type="text" th:field="${producto.nombre}" placeholder="Nombre del producto">	
+	<span th:errors = "*{nombre}"  style="color:  #E81505;" name="nombre"></span>
+	<br>
+	<label for="desc">Descripcion del producto: </label>
+	<input type="text" th:field="*{descripcion}" placeholder="Descripción del producto">	
+	<span th:errors = "*{descripcion}"  style="color:  #E81505;" name="desc"></span>
+	<br>
+	
+	<label for="precio">Precio del producto: </label>
+	<input type="number" th:field="*{precio}" name="precio" placeholder="Precio del producto">	
+	<span th:errors = "*{precio}"  style="color:  #E81505;"></span>
+	<br>
+	<label for="fecha">Fecha de vencimiento del producto: </label>
+	<input type="text" th:field="*{vencimiento}" placeholder="Dia / Mes / Año">	
+	<span th:errors = "*{vencimiento}"  style="color:  #E81505;" name="fecha" ></span>
+	<br>
+	</div>
+	<input type="submit" value="Agregar Producto">
+	</div>
+</form>
+</body>
+</html>
